@@ -30,7 +30,7 @@
 
 <nav class="navbar navbar-light bg-light">
  <div class="container-fluid">
-   <form class="d-flex" action="vacina.php" method="POST">
+   <form class="d-flex" action="vacina_tabela.php" method="POST">
      <input class="form-control me-2" type="search" placeholder="Pesquisar Vacina" aria-label="Search" name = "busca">
      <button class="btn btn-outline-success" type="submit">Pesquisar</button>
    </form>
@@ -58,7 +58,7 @@
          $nome_vacina = $linha['nome_vacina'];
          $fabricante = $linha['fabricante'];
          $lote = $linha['lote'];
-         $validade = $linha['validade'];
+         $validade = date("d/m/Y", strtotime($linha['validade']));
 
 
               echo "<tr>

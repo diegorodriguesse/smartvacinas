@@ -28,7 +28,7 @@
         <div class="col">
           <h1>Edição de Cadastro de Paciente</h1>
 
-            <form action = 'paciente_cadastro_script.php' method="POST">
+            <form action = 'paciente_edicao_script.php' method="POST">
               <div class="form-group">
                <label for="nome_vacina" class="form-label">Nome do Paciente</label>
                <input type="text" class="form-control" id="nome" size="100" name = "nome" required value="<?php echo $linha['nome'];?>">
@@ -147,7 +147,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
+  
   </body>
 </html>
 

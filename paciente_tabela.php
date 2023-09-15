@@ -48,7 +48,7 @@ $dados = mysqli_query($connection, $sql);
                       $nome_social = $linha['nome_social'];
                       $cpf = $linha['cpf'];
                       $rg = $linha['rg']; 
-                      $data_nascimento = $linha['data_nascimento'];
+                      $data_nascimento = date("d/m/Y",strtotime($linha['data_nascimento']));
 
                            echo "<tr>
                                     <th scope='row'>$id</th>

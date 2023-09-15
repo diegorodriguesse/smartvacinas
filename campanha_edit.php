@@ -43,7 +43,7 @@
                             <select id="sexo_paciente" name="sexo_paciente">
                                 <option value="masculino"> <?php if($linha['sexo_paciente'] == 'masculino') echo "selected "; ?>Masculino</option>
                                 <option value="feminino"> <?php if($linha['sexo_paciente'] == 'feminino') echo "selected "; ?>Feminino</option>
-                                <option value="ambos"> <?php if($linha['sexo_paciente'] == 'ambos') echo "selected "; ?>Ambos</option>
+                                <option <?php echo $linha['sexo_paciente'] == 'ambos'? 'checked': ''; ?>value="ambos">  <?php if($linha['sexo_paciente'] == 'ambos') echo "selected "; ?>Ambos</option>
                             </select><br><br>
                     </div>
 
@@ -56,8 +56,6 @@
                    {
                        $sexo_paciente = false;
                    }
-
-                   echo $linha['id_campanha'];
                   ?>
 
               <div class="form-group">

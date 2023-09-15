@@ -26,13 +26,14 @@
         $idade_max = $_POST['idade_max'];  
         */    
 
-        $id_campanha = filter_input(INPUT_POST, 'id_campanha', FILTER_SANITIZE_NUMBER_INT);
+        $id_campanha = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
         $nome_campanha = filter_input(INPUT_POST, 'nome_campanha', FILTER_SANITIZE_STRING);
         $sexo_paciente = filter_input(INPUT_POST, 'sexo_paciente', FILTER_SANITIZE_STRING);
         $idade_min = filter_input(INPUT_POST, 'idade_min', FILTER_SANITIZE_NUMBER_INT);
         $idade_max = filter_input(INPUT_POST, 'idade_max', FILTER_SANITIZE_NUMBER_INT);
 
-        $sql = "UPDATE `campanhas` SET `nome_campanha`='$nome_campanha', `nome_campanha`='$nome_campanha', `sexo_paciente`='$sexo_paciente', `idade_min`='$idade_min', 'idade_max' = '$idade_max'  WHERE `id_campanha`='$id_campanha';";
+        $sql = "UPDATE campanhas SET nome_campanha='$nome_campanha', sexo_paciente='$sexo_paciente', idade_min='$idade_min', idade_max = '$idade_max'  
+        WHERE id_campanha='$id_campanha';";
 
         if(mysqli_query($connection, $sql)){
           mensagem ("Campanha $nome_campanha alterada com sucesso.", 'sucess');

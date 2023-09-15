@@ -29,7 +29,7 @@
 
            ?> 
            <hr>
-           <a href="paciente.php" class="btn btn-primary">Voltar</a>
+           <a href="paciente_tabela.php" class="btn btn-primary">Voltar</a>
         </div>      
       </div>
     </div>

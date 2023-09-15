@@ -20,19 +20,22 @@
         $sql = "SELECT * from vacina where id_vacina = '$id'";
         $dados = mysqli_query($connection, $sql);
         $linha = mysqli_fetch_assoc($dados);
-        
+
+        $sql1 = "SELECT * from campanhas";
+        $dados1 = mysqli_query($connection, $sql1);
+        $linha1 = mysqli_fetch_assoc($dados1);
     ?>
 
     <div class="container">
       <div class="row">
         <div class="col">
-          <h1>Edição de Categoria de Produtos</h1>
+          <h1>Edição de Vacina</h1>
 
           <div class="form-group">
                <label for="nome_vacina" class="form-label">Nome da Campanha</label>
                 <br>
                <select class="form-control" id="'nome_campanha'" name="'nome_campanha'" required value="<?php echo $linha['nome_campanha'];?>"> 
-               <?php while($row1 = mysqli_fetch_array($result1)):;?>
+               <?php while($row1 = mysqli_fetch_array($dados1)):;?>
                <option><?php echo $row1[1];?></option>
                <?php endwhile;?>
             </select>
