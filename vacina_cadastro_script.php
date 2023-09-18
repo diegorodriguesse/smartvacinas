@@ -17,17 +17,19 @@
     <div class="row">
         <?php
         include "conexao.php";
-
-        $nome_campanha_selecionada = $_POST['nome_campanha_selecionada'] ?? '';
+        //$nome_campanha_selecionada = $_POST['nome_campanha_selecionada'] ?? '';
         $nome_vacina = $_POST['nome_vacina'] ?? '';
         $fabricante = $_POST['fabricante'] ?? '';
         $lote = $_POST['lote'] ?? '';
         $validade = $_POST['validade'] ?? '';
 
-        if ($nome_campanha_selecionada != '' && $nome_vacina != '' && $fabricante != '' && $lote != '' && $validade != '') {
-            $sql = "INSERT INTO `vacina` (`nome_campanha`, `nome_vacina`, `fabricante`, `lote`, `validade`) 
-                    VALUES ('$nome_campanha_selecionada', '$nome_vacina', '$fabricante', '$lote', '$validade');";
+        /*$sqlantigo = "INSERT INTO `vacina` (`nome_campanha`, `nome_vacina`, `fabricante`, `lote`, `validade`) 
+                VALUES ('$nome_campanha_selecionada', '$nome_vacina', '$fabricante', '$lote', '$validade');";*/
 
+        if ($nome_vacina != '' && $fabricante != '' && $lote != '' && $validade != '') {
+            $sql = "INSERT INTO `vacina` (`nome_vacina`, `fabricante`, `lote`, `validade`) 
+                    VALUES ('$nome_vacina', '$fabricante', '$lote', '$validade');";
+            
             if (mysqli_query($connection, $sql)) {
                 mensagem("Vacina $nome_vacina cadastrada com sucesso.", 'success');
             } else {

@@ -25,8 +25,6 @@
   <body>
 
           <h3>Vacinas Cadastradas</h3>
-          <h6>  *Lembre-se: Antes de cadastrar uma nova vacina, verifique se existe uma campanha cadastrada para vincular.</h6>
-
 
 <nav class="navbar navbar-light bg-light">
  <div class="container-fluid">
@@ -41,7 +39,6 @@
  <thead class="table-dark">
    <tr>                  
      <th scope="col">ID</th>
-     <th scope="col">Nome da Campanha</th>
      <th scope="col">Nome da Vacina</th>
      <th scope="col">Fabricante</th>
      <th scope="col">Lote</th>
@@ -54,7 +51,7 @@
        <?php
          while ($linha = mysqli_fetch_assoc($dados)) {
          $id_vacina = $linha ['id_vacina'];
-         $nome_campanha = $linha['nome_campanha'];
+        // $nome_campanha = $linha['nome_campanha'];
          $nome_vacina = $linha['nome_vacina'];
          $fabricante = $linha['fabricante'];
          $lote = $linha['lote'];
@@ -63,15 +60,14 @@
 
               echo "<tr>
                        <th scope='row'>$id_vacina</th>
-                       <td>$nome_campanha</td>
                        <td>$nome_vacina</td>
                        <td>$fabricante</td>
                        <td>$lote</td>
                        <td>$validade</td>
                        <td width=150px>
-                           <a href='vacina_edit_script.php?id=$id_vacina' class='btn btn-primary btn-sm'>Editar</a>
+                           <a href='vacina_edit.php?id=$id_vacina' class='btn btn-primary btn-sm'>Editar</a>
                            <a href='#' class='btn btn-danger btn-sm' data-bs-toggle='modal' data-bs-target='#confirma_exclusao'
-                           onclick=" .'"' ."pegar_dados($id_vacina, '$nome_campanha' , '$nome_vacina', '$fabricante', '$lote', '$validade')" .'"' .">Excluir</a>
+                           onclick=" .'"' ."pegar_dados($id_vacina, '$nome_vacina', '$fabricante', '$lote', '$validade')" .'"' .">Excluir</a>
                        </td>
                    </tr>";
                }
@@ -80,7 +76,7 @@
            
 </tbody>
 </table>
-                    <a href="vacina.php" class="btn btn-primary">Inserir nova vacina</a>
+                    <a href="vacina.php" class="btn btn-secondary">Cadastrar nova vacina</a>
 
           <a href="index.php" class="btn btn-danger">Voltar para o Início</a>
         </div>

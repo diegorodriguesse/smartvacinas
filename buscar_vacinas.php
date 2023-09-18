@@ -3,7 +3,7 @@ include "conexao.php";
 
 $campanhaSelecionada = $_POST['campanhaSelecionada'];
 
-$vacina_sql = "SELECT * FROM vacina WHERE nome_campanha = '$campanhaSelecionada'";
+$vacina_sql = "SELECT * FROM juncao_campanha_vacina WHERE id_campanha = '$campanhaSelecionada'";
 $dados_vacinas = mysqli_query($connection, $vacina_sql);
 
 $options = '';

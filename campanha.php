@@ -68,7 +68,7 @@ $dados = mysqli_query($connection, $sql);
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" class="btn btn-success">
+                        <input type="submit" class="btn btn-success" value="Cadastrar">
                         <a href="campanha_tabela.php" class="btn btn-danger">Voltar</a>
                     </div>
 

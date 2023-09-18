@@ -32,7 +32,9 @@
              <a href = "paciente_tabela.php" class = "btn btn-success"> Pacientes </a>
              <a href = "vacina_tabela.php" class = "btn btn-success"> Vacinas </a>
               <a href = "campanha_tabela.php" class = "btn btn-success"> Campanhas de Vacinação </a>
+              <a href = "juncao_campanha_vacina_tabela.php" class = "btn btn-success"> Junção Campanha / Vacina </a>
               <a href = "aplicacao_vacina.php" class = "btn btn-success"> Aplicação de Vacinas </a>
+
 
         </div>
       </div>

@@ -88,12 +88,6 @@
                <label for="bairro" class="form-label">bairro</label>
                <input type="text" class="form-control" id="bairro" size="11" name = "bairro" required value="<?php echo $linha['bairro'];?>">
              </div>
-
-           <!--     <form>
-              <div class="form-group">
-               <label for="tipo_user" class="form-label">tipo de usuário</label>
-               <input type="text" class="form-control" id="tipo_user" size="11" name = "tipo_user" required value="<?php echo $linha['tipo_user'];?>">
-             </div> -->
               
             <div class="form-group">
                 <label for="sexo" class="form-label">Sexo</label>
@@ -141,7 +135,7 @@
        <!--
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
+     Option 2: Separate Popper and Bootstrap JS -->
 
 
 
@@ -150,36 +144,3 @@
   
   </body>
 </html>
-
-<!--
-
-Carregar dados de uma tabela em uma caixa de select
-
-<form>
-              <div class="form-group">
-               <label for="tipoProduto" class="form-label">Categoria</label>
-               <input type="text" class="form-control" id="tipoProduto" size="100" name = "categoria" required> 
-               <select name = categoria class="form-select" > 
-                  <option>Selecione a categoria:</option>
-                   <?php
-                      //while ($linha1 = mysqli_fetch_assoc($dados1)) { ?>
-                        <option value="<?php //echo $linha1['nome_categoria']; ?> "> <?php //echo $linha1['nome_categoria']; ?> </option> <?php 
-                      //} 
-                      ?>                        
-               </select>
-             </div>
-
-
-
-
-Informar Status (sim/não)
-  <form>
-              <div class="form-group">
-               <label for="ativo" class="form-label">Ativo</label>
-               <select class="form-select" aria-label="Default select example">
-                 <option value="0">SIM</option>
-                 <option value="1">NÃO</option>
-               </select>
-             </div>
-
-             -->
