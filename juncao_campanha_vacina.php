@@ -10,8 +10,6 @@
 
     $sql_vacina = "SELECT id_vacina, nome_vacina FROM `vacina`";
     $dados_vacinas = mysqli_query($connection, $sql_vacina);
-
-    
 ?>
 
 <!doctype html>

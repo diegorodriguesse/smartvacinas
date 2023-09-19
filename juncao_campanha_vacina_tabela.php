@@ -69,7 +69,7 @@ $dados = mysqli_query($connection, $sql);
                 </table>
 
                 <a href="index.php" class="btn btn-danger">Voltar para o Início</a>
-                <a href="campanha.php" class="btn btn-secondary">Cadastrar nova campanha</a>
+                <a href="juncao_campanha_vacina.php" class="btn btn-secondary">Cadastrar nova campanha</a>
 
 
             </div>

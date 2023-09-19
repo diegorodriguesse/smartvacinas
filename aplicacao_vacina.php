@@ -2,13 +2,13 @@
     $pesquisa = $_POST['busca'] ?? '';
     include "conexao.php";
 
-    //$aplicacao_vacina_sql = "SELECT * FROM aplicacao_vacina WHERE nome_paciente LIKE '%$pesquisa%' ";
-    //$dados_aplicacao = mysqli_query($connection, $aplicacao_vacina_sql);
-
-    $campanhas_sql = "SELECT * FROM `juncao_campanha_vacina`";
+    //Essas consultas estão funcionando
+    $campanhas_sql = "SELECT distinct juncao_campanha_vacina.id_campanha, campanhas.nome_campanha FROM `juncao_campanha_vacina`
+    JOIN campanhas on campanhas.id_campanha = juncao_campanha_vacina.id_campanha";
     $dados_campanhas = mysqli_query($connection, $campanhas_sql);
 
     $vacina_sql = "SELECT * FROM juncao_campanha_vacina WHERE id_campanha = atualizarCampanhaSelecionada.nome_campanha";
+
     $dados_vacinas = mysqli_query($connection, $vacina_sql);
 
     $paciente_sql = "SELECT * FROM `paciente` ORDER BY nome_social";
@@ -50,9 +50,9 @@
               <div class="form-group">
               <label for="nome_campanha" class="form-label">Campanha</label>
               <br>
-              <select class="form-control" id="id_campanha" name="id_campanha" onchange="carregarVacinas(this.value)" required>
+              <select class="form-control" id="id_campanha" name="id_campanha" onchange="carregarVacinas(this.value); CampanhaSelecionada() " required>
                 <?php while($row1 = mysqli_fetch_array($dados_campanhas)):;?>
-                <option value="<?php echo $row1['id_campanha']; ?>"><?php echo $row1['id_campanha']; ?></option>
+                <option value="<?php echo $row1['id_campanha']; ?>"><?php echo $row1['nome_campanha']; ?></option>
                 <?php endwhile; ?>
               </select>
 
@@ -61,13 +61,15 @@
             <div class="form-group">
               <label for="nome_vacina" class="form-label">Vacina</label>
               <br>
-              <select class="form-control" id="id_vacina" name="id_vacina">
+              <select class="form-control" id="nome_vacina" name="nome_vacina" onchange="VacinaSelecionada()">
                 <?php while($row2 = mysqli_fetch_array($dados_vacinas)):;?>
-                <option value="<?php echo $row2['id_vacina']; ?>"><?php echo $row2['id_vacina']; ?></option>
+                <option value="<?php echo $row2['id_vacina']; ?>"><?php echo $row2['nome_vacina']; ?></option>
                 <?php endwhile; ?>
               </select>
 
               <input type="hidden" name="id_vacina_selecionada" id="id_vacina_selecionada">
+
+              <input type="hidden" id="data_hora_aplicacao" name="data_hora_aplicacao" value="">
 
               <br>
               <div class="form-group">
@@ -82,6 +84,16 @@
      function atualizarPacienteSelecionado() {
         var pacienteSelecionado = document.getElementById('nome_social').value;
         document.getElementById('id_paciente_selecionado').value = pacienteSelecionado;
+    }
+
+    function CampanhaSelecionada() {
+        var idCampanhaSelecionada = document.getElementById('id_campanha').value;
+        document.getElementById('id_campanha_selecionada').value = idCampanhaSelecionada;
+    }
+
+    function VacinaSelecionada() {
+      var idVacinaSelecionada = document.getElementById('nome_vacina').value;
+        document.getElementById('id_vacina_selecionada').value = idVacinaSelecionada;
     }
 
     function carregarVacinas(campanhaSelecionada) {
